@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background-color: black;
+      }
+      #container {
+        width: 100%;
+      }
+      .gaurav {
+        width: 50%;
+        margin-left: 15px;
+        color: white;
+        margin: auto;
+        margin-top: 20px;
+      }
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+      .gau {
+        color: red;
+        text-align: center;
+        font-size: 30px;
+        margin-top: 20px;
+      }
+      .peek {
+        color: bisque;
+        font-size: 25px;
+        justify-content: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="navrar"></div>
+    <div id="container"></div>
+  </body>
+
+  <script type="module">
+    let navbar = document.getElementById('navrar')
+    let cont = document.getElementById('container')
+
+    import nav from './components/navbar.js'
+    navbar.innerHTML = nav()
+    import {
+      searchfood,
+      appenddishes,
+      main,
+      debounce,
+      selectdish,
+    } from './script/showdata.js'
+    let serin = document.getElementById('search')
+    serin.addEventListener('input', function () {
+      debounce(main, 1000)
+    })
+
+    var n = JSON.parse(localStorage.getItem('dishinfo'))
+    console.log(n)
+
+    n.forEach(({ strMealThumb, strCategory, strInstructions }) => {
+      let div = document.createElement('div')
+      div.setAttribute('class', 'gaurav')
+      let image = document.createElement('img')
+      image.src = strMealThumb
+      let p = document.createElement('p')
+      p.innerHTML = strCategory
+      p.setAttribute('class', 'gau')
+      let p2 = document.createElement('p')
+      p2.setAttribute('class', 'peek')
+      p2.innerHTML = strInstructions
+      div.append(image, p, p2)
+      cont.append(div)
+    })
+
+    localStorage.removeItem('dishinfo')
+  </script>
+</html>

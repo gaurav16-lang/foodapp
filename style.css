@@ -1,0 +1,130 @@
+* {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 1px;
+}
+
+.cla {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    background-color: black;
+    border: 1px solid grey;
+   
+}
+
+.logo {
+    width: 30%;
+}
+
+.logo img {
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+.find {
+    width: 40%;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 100%;
+    margin-top: 30px;
+    height: 30px;
+    outline: none;
+}
+
+#dropdown {
+top: 65px;
+    width: 36.2%;
+    display: none;
+    overflow: scroll;
+    height: 300px;
+    position: absolute;
+    z-index: 1;
+    background-color: black;
+}
+
+input:focus {
+    font-size: 20px;
+}
+
+.content {
+    width: 30%;
+    margin-left: 50px;
+    display: flex;
+    padding: 2%;
+}
+
+h3 {
+    margin-left: 5px;
+}
+
+button {
+    height: 34px;
+    margin-top: 32px;
+    color: red;
+}
+
+
+.dropdownp {
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.bigdiv {
+    margin-left: 20px;
+    width: 50%;
+    height: 100px;
+    margin-top: 10px;
+    border: 1px solid black;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #020108;
+}
+
+.dropdiv {
+    width: 30%;
+}
+
+.rightdiv {
+    width: 50%;
+    margin-left: 0px;
+}
+
+.dropimage {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.showmyfilm {
+    display: none;
+    width: 80%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin: auto;
+}
+
+.middle {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.left {
+    width: 30%;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+
+.right {
+    width: 40%;
+    box-sizing: border-box;
+    height: fit-content;
+    margin-top: 50px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Searchpage</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background-image: url('https://wallpaperaccess.com/full/767033.jpg');
+        background-size: cover;
+      }
+    </style>
+  </head>
+
+  <body></body>
+  <script type="module">
+
+var timerid;
+  
+    import nav from './components/navbar.js'
+    document.body.innerHTML = nav()
+   import {searchfood,appenddishes,main,debounce,selectdish} from './script/showdata.js'
+    
+    let serin=document.getElementById("search")
+    serin.addEventListener("input",function(){
+
+        debounce(main,1000)
+
+    })
+   
+   
+   
+   
+   
+   
+    
+
+
+    
+  </script>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+
+      body{
+        background-color: black;
+      }
+      #container{
+        width: 100%;
+       
+      
+        display: grid;
+        grid-template-columns: repeat(4,20%);
+        grid-gap:5%;
+       
+        background-color: black;
+        padding-top: 30px;
+
+      }
+      .gaurav{
+        overflow-y:hidden;
+        overflow-x: hidden;
+        height: 400px;
+        margin-left: 15px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="navrar"></div>
+    <div id="container"></div>
+  </body>
+  <script type="module">
+    let navbar = document.getElementById('navrar')
+    import nav from './components/navbar.js'
+    navbar.innerHTML = nav()
+    import {searchfood,appenddishes,main,debounce,selectdish} from './script/showdata.js'
+    let serin=document.getElementById("search")
+    serin.addEventListener("input",function(){
+
+        debounce(main,1000)
+
+    })
+
+let cont = document.getElementById("container");
+    async function display()
+    {
+      let res = await fetch(`http://www.themealdb.com/api/json/v1/1/categories.php`)
+     let data = await res.json();
+     let r = data.categories;
+     console.log(r);
+     r.forEach(({strCategoryThumb,strCategory,strCategoryDescription})=>{
+
+let div = document.createElement("div");
+div.setAttribute("class","gaurav");
+let image = document.createElement("img");
+image.src=strCategoryThumb
+let p =document.createElement("p");
+p.innerHTML=strCategory;
+let p2=document.createElement("p");
+p2.innerHTML=strCategoryDescription;
+div.append(image,p,p2);
+cont.append(div);
+
+
+     })
+    }
+    display();
+  
+  </script>
+</html>
